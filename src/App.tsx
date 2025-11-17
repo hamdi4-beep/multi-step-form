@@ -4,7 +4,7 @@ function App() {
       <div className="container">
         <div className="left-side">
           <div className="step">
-            <span className="step-number">1</span>
+            <span className="step-number active-step">1</span>
             
             <div className="step-info">
               <p>Step 1</p>
