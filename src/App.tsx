@@ -3,10 +3,13 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="left-side">
-          <div className="step-1">
-            <span>1</span>
-            <h3>Step 1</h3>
-            <h2>Your Info</h2>
+          <div className="step">
+            <span className="step-number">1</span>
+            
+            <div className="step-info">
+              <p>Step 1</p>
+              <h4>Your Info</h4>
+            </div>
           </div>
         </div>
 
@@ -21,7 +24,7 @@ function App() {
             <input type="email" name="emailAddress" id="emailAddress" placeholder="e.g. stephenking@lorem.com" />
             <label htmlFor="phoneNumber">Phone Number</label>
             <input type="number" name="phoneNumber" id="phoneNumber" placeholder="e.g. +1 234 567 890" />
-            <button>Next Step</button>
+            <button className="cta-btn">Next Step</button>
           </form>
         </div>
       </div>
