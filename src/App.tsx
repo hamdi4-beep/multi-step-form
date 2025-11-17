@@ -1,6 +1,31 @@
 function App() {
   return (
-    <div className="App"></div>
+    <div className="App">
+      <div className="container">
+        <div className="left-side">
+          <div className="step-1">
+            <span>1</span>
+            <h3>Step 1</h3>
+            <h2>Your Info</h2>
+          </div>
+        </div>
+
+        <div className="right-side">
+          <h1>Personal Info</h1>
+          <p>Please provide your name, email address, and phone number</p>
+          
+          <form action="#">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="e.g. Stephen King" />
+            <label htmlFor="emailAddress">Email Address</label>
+            <input type="email" name="emailAddress" id="emailAddress" placeholder="e.g. stephenking@lorem.com" />
+            <label htmlFor="phoneNumber">Phone Number</label>
+            <input type="number" name="phoneNumber" id="phoneNumber" placeholder="e.g. +1 234 567 890" />
+            <button>Next Step</button>
+          </form>
+        </div>
+      </div>
+    </div>
   )
 }
 
