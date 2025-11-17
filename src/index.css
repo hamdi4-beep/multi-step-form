@@ -49,7 +49,7 @@ h1 + p {
 
 .left-side {
     background-image: url(../public/images/bg-sidebar-desktop.svg);
-    background-position: bottom;
+    background-position: 80%;
     background-size: cover;
     border-radius: 5px;
     width: 20em;
