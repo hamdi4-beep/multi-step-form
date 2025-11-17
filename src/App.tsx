@@ -1,16 +1,20 @@
+import data from './data.json'
+
 function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="left-side">
-          <div className="step">
-            <span className="step-number active-step">1</span>
-            
-            <div className="step-info">
-              <p>Step 1</p>
-              <h4>Your Info</h4>
+          {data.info.map(stepInfo => (
+            <div className="step" key={stepInfo.stepNumber}>
+              <span className={`step-number ${stepInfo.stepNumber === 1 ? 'active-step' : ''}`}>{stepInfo.stepNumber}</span>
+              
+              <div className="step-info">
+                <p>{stepInfo.subheadline}</p>
+                <h4>{stepInfo.headline}</h4>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="right-side">

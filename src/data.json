@@ -1,0 +1,24 @@
+{
+    "info": [
+        {
+            "stepNumber": 1,
+            "subheadline": "Step 1",
+            "headline": "Your Info"
+        },
+        {
+            "stepNumber": 2,
+            "subheadline": "Step 2",
+            "headline": "Select Plan"
+        },
+        {
+            "stepNumber": 3,
+            "subheadline": "Step 3",
+            "headline": "Add-Ons"
+        },
+        {
+            "stepNumber": 4,
+            "subheadline": "Step 4",
+            "headline": "Summary"
+        }
+    ]
+}

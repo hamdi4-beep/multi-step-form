@@ -62,6 +62,7 @@ h1 + p {
     display: flex;
     align-items: center;
     gap: 1em;
+    margin-bottom: 2em;
 }
 
 .active-step {
