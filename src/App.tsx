@@ -1,3 +1,5 @@
+import StepOne from './components/StepOne'
+import StepTwo from './components/StepTwo'
 import data from './data.json'
 
 function App() {
@@ -18,18 +20,7 @@ function App() {
         </div>
 
         <div className="right-side">
-          <h1>Personal Info</h1>
-          <p>Please provide your name, email address, and phone number</p>
-          
-          <form action="#">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="e.g. Stephen King" />
-            <label htmlFor="emailAddress">Email Address</label>
-            <input type="email" name="emailAddress" id="emailAddress" placeholder="e.g. stephenking@lorem.com" />
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <input type="number" name="phoneNumber" id="phoneNumber" placeholder="e.g. +1 234 567 890" />
-            <button className="cta-btn">Next Step</button>
-          </form>
+          <StepTwo />
         </div>
       </div>
     </div>
