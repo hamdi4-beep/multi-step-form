@@ -21,7 +21,6 @@
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: var(--neutral-clr-purple-200);
     min-height: 100vh;
     position: relative;
 }
@@ -44,6 +43,11 @@ h1 + p {
     margin-bottom: 2em;
     margin-top: 1em;
     color: var(--neutral-clr-grey-500);
+}
+
+.container {
+    background-color: var(--neutral-clr-purple-200);
+    position: relative;
 }
 
 .left-side {
@@ -93,7 +97,7 @@ h1 + p {
     background-color: var(--neutral-clr-white);
     width: 25rem;
     margin-inline: auto;
-    margin-top: -4em;
+    transform: translateY(-4em);
     padding: 1.5rem;
     padding-top: 2rem;
     border-radius: 10px;
@@ -104,6 +108,11 @@ h1 + p {
         display: grid;
         place-content: center;
         min-height: 100vh;
+        background-color: var(--neutral-clr-purple-200);
+    }
+
+    .container {
+        background: none;
     }
 
     .left-side {
@@ -146,7 +155,7 @@ h1 + p {
         padding-inline: 5em;
         padding-top: 3em;
         width: 100%;
-        margin: 0;
+        transform: none;
     }
 
     .container {
