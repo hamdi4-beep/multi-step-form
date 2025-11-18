@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="left-side">
-          {data.info.map(stepInfo => (
+          {data.steps.map(stepInfo => (
             <div className="step" key={stepInfo.stepNumber}>
               <span className={`step-number ${stepInfo.stepNumber === 1 ? 'active-step' : ''}`}>{stepInfo.stepNumber}</span>
               

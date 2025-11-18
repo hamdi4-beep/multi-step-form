@@ -1,5 +1,5 @@
 {
-    "info": [
+    "steps": [
         {
             "stepNumber": 1,
             "subheadline": "Step 1",
@@ -19,6 +19,20 @@
             "stepNumber": 4,
             "subheadline": "Step 4",
             "headline": "Summary"
+        }
+    ],
+    "plans": [
+        {
+            "name": "Arcade",
+            "monthlyPrice": 9
+        },
+        {
+            "name": "Advanced",
+            "monthlyPrice": 12
+        },
+        {
+            "name": "Pro",
+            "monthlyPrice": 15
         }
     ]
 }
