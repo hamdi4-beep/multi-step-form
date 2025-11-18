@@ -98,20 +98,14 @@ h1 + p {
     border-radius: 10px;
 }
 
-.plans-list {
-    display: flex;
-    gap: 1em;
-}
-
 .plan {
     border: 1px solid var(--neutral-clr-purple-200);
     border-radius: 5px;
     padding: 1em;
     padding-right: 3em;
-}
-
-.avatar-img {
-    margin-bottom: 3em;
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
 }
 
 .plan p {
@@ -241,5 +235,18 @@ button.cta-btn {
     .cta-btns {
         margin-top: 8em;
         position: static;
+    }
+
+    .plans-list {
+        display: flex;
+        gap: 1em;
+    }
+
+    .plan {
+        display: block;
+    }
+
+    .avatar-img {
+        margin-bottom: 3em;
     }
 }

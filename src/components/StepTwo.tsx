@@ -10,8 +10,10 @@ function StepTwo() {
                         <img src="/multi-form-step/images/icon-arcade.svg" alt="Arcade Icon" />
                     </div>
 
-                    <p>Arcade</p>
-                    <span>$9/mo</span>
+                    <div className="plan-info">
+                        <p>Arcade</p>
+                        <span>$9/mo</span>
+                    </div>
                 </div>
 
                 <div className="plan">
@@ -19,8 +21,10 @@ function StepTwo() {
                         <img src="/multi-form-step/images/icon-advanced.svg" alt="Advanced Icon" />
                     </div>
 
-                    <p>Advanced</p>
-                    <span>$12/mo</span>
+                    <div className="plan-info">
+                        <p>Advanced</p>
+                        <span>$12/mo</span>
+                    </div>
                 </div>
 
                 <div className="plan">
@@ -28,8 +32,10 @@ function StepTwo() {
                         <img src="/multi-form-step/images/icon-pro.svg" alt="Pro Icon" />
                     </div>
 
-                    <p>Pro</p>
-                    <span>$15/mo</span>
+                    <div className="plan-info">
+                        <p>Pro</p>
+                        <span>$15/mo</span>
+                    </div>
                 </div>
             </div>
 
