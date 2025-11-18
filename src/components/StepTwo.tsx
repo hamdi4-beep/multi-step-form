@@ -5,7 +5,7 @@ function StepTwo() {
             <p>You have the option of monthly or yearly billing.</p>
 
             <div className="plans-list">
-                <div className="plan">
+                <div className="plan active-plan">
                     <div className="avatar-img">
                         <img src="/multi-form-step/images/icon-arcade.svg" alt="Arcade Icon" />
                     </div>

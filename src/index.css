@@ -155,6 +155,12 @@ h1 + p {
 
 .cta-btns button {
     color: var(--neutral-clr-grey-500);
+    cursor: pointer;
+}
+
+.active-plan {
+    border-color: var(--primary-clr-blue-950);
+    background-color: var(--neutral-clr-blue-50);
 }
 
 button.cta-btn {
