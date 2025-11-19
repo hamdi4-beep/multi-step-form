@@ -1,7 +1,9 @@
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import data from '../data.json'
 
-function StepTwo() {
+function SelectPlan() {
+    const navigate = useNavigate()
+
     return (
         <div className="page two">
             <h1>Select your plan</h1>
@@ -11,12 +13,12 @@ function StepTwo() {
                 {data.plans.map(plan => (
                     <div className={`plan ${plan.name === 'Arcade' ? 'active-plan' : ''}`}>
                         <div className="avatar-img">
-                            <img src={`/multi-form-step/images/icon-${plan.name.toLocaleLowerCase()}.svg`} alt="" />
+                            <img src={`/multi-step-form/images/icon-${plan.name.toLocaleLowerCase()}.svg`} alt="" />
                         </div>
 
                         <div className="plan-info">
                             <p>{plan.name}</p>
-                            <span>${plan.monthlyPrice}/mo</span>
+                            <span>${plan.price}/mo</span>
                         </div>
                     </div>
                 ))}
@@ -29,14 +31,14 @@ function StepTwo() {
             </div>
 
             <div className="cta-btns">
-                <button>Go Back</button>
-                
+                <button onClick={() => navigate('/multi-step-form/your-info')}>Go Back</button>
+
                 <button className="cta-btn">
-                    <Link to='/multi-form-step/add-ons'>Next Step</Link>
+                    <Link to='/multi-step-form/add-ons'>Next Step</Link>
                 </button>
             </div>
         </div>
     )
 }
 
-export default StepTwo
+export default SelectPlan

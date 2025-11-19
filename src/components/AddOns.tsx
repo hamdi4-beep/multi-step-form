@@ -1,6 +1,6 @@
 import data from '../data.json'
 
-function StepThree() {
+function AddOns() {
     return (
         <div className="page three">
             <h1>Pick add-ons</h1>
@@ -29,4 +29,4 @@ function StepThree() {
     )
 }
 
-export default StepThree
+export default AddOns

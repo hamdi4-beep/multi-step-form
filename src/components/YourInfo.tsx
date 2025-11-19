@@ -1,10 +1,10 @@
-function StepOne() {
+function YourInfo() {
     return (
         <div className="page">
           <h1>Personal Info</h1>
           <p>Please provide your name, email address, and phone number</p>
           
-          <form action="/multi-form-step/select-plan">
+          <form action="/multi-step-form/select-plan">
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="name" className="input-field" placeholder="e.g. Stephen King" />
             <label htmlFor="emailAddress">Email Address</label>
@@ -17,4 +17,4 @@ function StepOne() {
     )
 }
 
-export default StepOne
+export default YourInfo

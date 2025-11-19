@@ -1,38 +1,16 @@
 {
-    "steps": [
-        {
-            "stepNumber": 1,
-            "subheadline": "Step 1",
-            "headline": "Your Info"
-        },
-        {
-            "stepNumber": 2,
-            "subheadline": "Step 2",
-            "headline": "Select Plan"
-        },
-        {
-            "stepNumber": 3,
-            "subheadline": "Step 3",
-            "headline": "Add-Ons"
-        },
-        {
-            "stepNumber": 4,
-            "subheadline": "Step 4",
-            "headline": "Summary"
-        }
-    ],
     "plans": [
         {
             "name": "Arcade",
-            "monthlyPrice": 9
+            "price": 9
         },
         {
             "name": "Advanced",
-            "monthlyPrice": 12
+            "price": 12
         },
         {
             "name": "Pro",
-            "monthlyPrice": 15
+            "price": 15
         }
     ],
     "addons": [

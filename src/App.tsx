@@ -1,21 +1,44 @@
-import { Route, Routes } from 'react-router'
-import StepOne from './components/StepOne'
-import StepThree from './components/StepThree'
-import StepTwo from './components/StepTwo'
-import data from './data.json'
+import { Navigate, Route, Routes, useLocation } from 'react-router'
+import YourInfo from './components/YourInfo'
+import SelectPlan from './components/SelectPlan'
+import AddOns from './components/AddOns'
+
+const steps = {
+  'your-info': {
+    name: 'Your Info',
+    number: 1
+  },
+  'select-plan': {
+    name: 'Select Plan',
+    number: 2
+  },
+  'add-ons': {
+    name: 'Add Ons',
+    number: 3
+  },
+  'summary': {
+    name: 'Summary',
+    number: 4
+  }
+} as {
+  [x: string]: any
+}
 
 function App() {
+  const location = useLocation()
+  console.log(location)
+
   return (
     <div className="App">
       <div className="container">
         <div className="left-side">
-          {data.steps.map(stepInfo => (
-            <div className="step" key={stepInfo.stepNumber}>
-              <span className={`step-number ${stepInfo.stepNumber === 1 ? 'active-step' : ''}`}>{stepInfo.stepNumber}</span>
+          {Object.keys(steps).map((path, i) => (
+            <div className="step" key={i}>
+              <span className={`step-number ${path === location.pathname.split('/').pop() ? 'active-step' : ''}`}>{steps[path].number}</span>
               
               <div className="step-info">
-                <p>{stepInfo.subheadline}</p>
-                <h4>{stepInfo.headline}</h4>
+                <p>Step {steps[path].number}</p>
+                <h4>{steps[path].name}</h4>
               </div>
             </div>
           ))}
@@ -23,9 +46,10 @@ function App() {
 
         <div className="right-side">
           <Routes>
-            <Route path='/multi-form-step' element={<StepOne />} />
-            <Route path='/multi-form-step/select-plan' element={<StepTwo />} />
-            <Route path='/multi-form-step/add-ons' element={<StepThree />} />
+            <Route path='/multi-step-form/your-info' element={<YourInfo />} />
+            <Route path='/multi-step-form/select-plan' element={<SelectPlan />} />
+            <Route path='/multi-step-form/add-ons' element={<AddOns />} />
+            <Route path='*' element={<Navigate to='/multi-step-form/your-info' replace />} />
           </Routes>
         </div>
       </div>
