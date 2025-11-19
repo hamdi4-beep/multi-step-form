@@ -1,4 +1,5 @@
 import StepOne from './components/StepOne'
+import StepThree from './components/StepThree'
 import StepTwo from './components/StepTwo'
 import data from './data.json'
 
@@ -20,7 +21,7 @@ function App() {
         </div>
 
         <div className="right-side">
-          <StepTwo />
+          <StepThree />
         </div>
       </div>
     </div>

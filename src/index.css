@@ -25,7 +25,7 @@ body {
     position: relative;
 }
 
-input {
+.input-field {
     font: inherit;
     display: block;
     margin-bottom: 1em;
@@ -173,6 +173,41 @@ button.cta-btn {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.addon {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    border: 1px solid var(--neutral-clr-purple-200);
+    border-radius: 10px;
+    padding: 1em;
+    padding-right: 2em;
+    padding-block: 1.5em;
+    margin-bottom: 1em;
+}
+
+.content {
+    margin-right: auto;
+    padding-right: 5em;
+}
+
+.content h3 {
+    color: var(--primary-clr-blue-950);
+    margin-bottom: .1em;
+}
+
+.content p {
+    color: var(--neutral-clr-grey-500);
+}
+
+.addon input {
+    margin-inline: 1em;
+    color: blue;
+}
+
+.addon .price {
+    color: var(--primary-clr-purple-600);
 }
 
 @media only screen and (min-width: 768px) {
