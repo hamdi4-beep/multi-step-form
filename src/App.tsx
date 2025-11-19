@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router'
 import StepOne from './components/StepOne'
 import StepThree from './components/StepThree'
 import StepTwo from './components/StepTwo'
@@ -21,7 +22,11 @@ function App() {
         </div>
 
         <div className="right-side">
-          <StepThree />
+          <Routes>
+            <Route path='/multi-form-step' element={<StepOne />} />
+            <Route path='/multi-form-step/select-plan' element={<StepTwo />} />
+            <Route path='/multi-form-step/add-ons' element={<StepThree />} />
+          </Routes>
         </div>
       </div>
     </div>
