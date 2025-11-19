@@ -4,7 +4,7 @@ function StepOne() {
           <h1>Personal Info</h1>
           <p>Please provide your name, email address, and phone number</p>
           
-          <form action="#">
+          <form action="/multi-form-step/select-plan">
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="name" className="input-field" placeholder="e.g. Stephen King" />
             <label htmlFor="emailAddress">Email Address</label>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import data from '../data.json'
 
 function StepTwo() {
@@ -29,7 +30,10 @@ function StepTwo() {
 
             <div className="cta-btns">
                 <button>Go Back</button>
-                <button className="cta-btn">Next Step</button>
+                
+                <button className="cta-btn">
+                    <Link to='/multi-form-step/add-ons'>Next Step</Link>
+                </button>
             </div>
         </div>
     )
