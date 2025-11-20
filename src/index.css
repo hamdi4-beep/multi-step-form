@@ -116,10 +116,16 @@ a {
 .plan p {
     color: var(--primary-clr-blue-950);
     font-weight: 700;
+    margin-bottom: .2em;
 }
 
 .plan p + span {
     color: var(--neutral-clr-grey-500);
+}
+
+.plan .gift-desc {
+    font-weight: 400;
+    margin-top: .3em;
 }
 
 .toggle {
@@ -137,6 +143,7 @@ a {
     border-radius: 2em;
     width: 3em;
     cursor: pointer;
+    display: flex;
 }
 
 .toggle-bar::after {
@@ -146,6 +153,10 @@ a {
     width: 1em;
     height: 1em;
     border-radius: 100%;
+}
+
+.toggled::after {
+    margin-left: auto;
 }
 
 .active {
@@ -278,7 +289,7 @@ button.cta-btn {
         padding: 1em;
         padding-right: 0;
         border-radius: 5px;
-        max-width: 1024px;
+        max-width: 1440px;
         width: 100%;
     }
 

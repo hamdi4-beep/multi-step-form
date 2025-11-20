@@ -2,15 +2,24 @@
     "plans": [
         {
             "name": "Arcade",
-            "price": 9
+            "price": {
+                "monthly": 9,
+                "yearly": 90
+            }
         },
         {
             "name": "Advanced",
-            "price": 12
+            "price": {
+                "monthly": 12,
+                "yearly": 120
+            }
         },
         {
             "name": "Pro",
-            "price": 15
+            "price": {
+                "monthly": 15,
+                "yearly": 150
+            }
         }
     ],
     "addons": [
