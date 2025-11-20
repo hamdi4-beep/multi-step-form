@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router'
 import data from '../data.json'
 
 function AddOns() {
+    const navigate = useNavigate()
+
     return (
         <div className="page three">
             <h1>Pick add-ons</h1>
@@ -22,7 +25,7 @@ function AddOns() {
             </div>
 
             <div className="cta-btns">
-                <button>Go back</button>
+                <button onClick={() => navigate('/multi-step-form/select-plan')}>Go back</button>
                 <button className="cta-btn">Next Step</button>
             </div>
         </div>
