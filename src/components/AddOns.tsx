@@ -15,7 +15,7 @@ function AddOns() {
                         <input type="checkbox" name='addon' id='addon' />
 
                         <div className="content">
-                            <h3>{addon.name}</h3>
+                            <h4 className='title'>{addon.title}</h4>
                             <p>{addon.description}</p>
                         </div>
 

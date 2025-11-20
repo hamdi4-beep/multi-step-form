@@ -197,9 +197,9 @@ button.cta-btn {
     padding-right: 5em;
 }
 
-.content h3 {
+.title {
     color: var(--primary-clr-blue-950);
-    margin-bottom: .1em;
+    margin-bottom: .3em;
 }
 
 .content p {
