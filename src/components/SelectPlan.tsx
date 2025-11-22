@@ -1,17 +1,29 @@
 import { Link, useNavigate } from 'react-router'
 import data from '../data.json'
-import { useState } from 'react'
+import { useState, type MouseEventHandler } from 'react'
 
 function SelectPlan() {
     const [paymentCycle, setPaymentCycle] = useState<'monthly' | 'yearly'>('monthly')
     const navigate = useNavigate()
+
+    const handlePlanClick: MouseEventHandler = e => {
+        const elem = e.target as HTMLDivElement
+        
+        for (const child of e.currentTarget.children) {
+            if (child === elem) {
+                elem.classList.add('active-plan')
+            } else {
+                child.classList.remove('active-plan')
+            }
+        }
+    }
 
     return (
         <div className="page two">
             <h1>Select your plan</h1>
             <p>You have the option of monthly or yearly billing.</p>
 
-            <div className="plans-list">
+            <div className="plans-list" onClick={handlePlanClick}>
                 {data.plans.map((plan, i) => (
                     <div className={`plan ${plan.name === 'Arcade' ? 'active-plan' : ''}`} key={i}>
                         <div className="avatar-img">
