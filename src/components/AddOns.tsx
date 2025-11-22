@@ -5,16 +5,15 @@ function AddOns() {
     const navigate = useNavigate()
 
     const handleAddonClick: React.MouseEventHandler = e => {
-        const elem = e.target as HTMLElement
+        const targetElement = e.target as HTMLElement
         
-        for (const child of e.currentTarget.children) {
-            const checkboxElement = child.firstElementChild as HTMLInputElement
-            if (child.contains(elem)) {
-                child.classList.add('active-addon')
+        for (const addonElement of e.currentTarget.children) {
+            // assumes the checkbox element is the first child of the addon element
+            const checkboxElement = addonElement.firstElementChild as HTMLInputElement
+
+            if (addonElement.contains(targetElement)) {
+                addonElement.classList.add('active-addon')
                 checkboxElement.checked = true
-            } else {
-                child.classList.remove('active-addon')
-                checkboxElement.checked = false
             }
         }
     }
