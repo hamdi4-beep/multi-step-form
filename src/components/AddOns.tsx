@@ -5,8 +5,18 @@ function AddOns() {
     const navigate = useNavigate()
 
     const handleAddonClick: React.MouseEventHandler = e => {
-        const elem = e.currentTarget
-        console.log(elem)
+        const elem = e.target as HTMLElement
+        
+        for (const child of e.currentTarget.children) {
+            const checkboxElement = child.firstElementChild as HTMLInputElement
+            if (child.contains(elem)) {
+                child.classList.add('active-addon')
+                checkboxElement.checked = true
+            } else {
+                child.classList.remove('active-addon')
+                checkboxElement.checked = false
+            }
+        }
     }
 
     return (
@@ -14,9 +24,9 @@ function AddOns() {
             <h1>Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience.</p>
 
-            <div className="addons-list">
+            <div className="addons-list" onClick={handleAddonClick}>
                 {data.addons.map((addon, i) => (
-                    <div className="addon" onClick={handleAddonClick} key={i}>
+                    <div className="addon" key={i}>
                         <input type="checkbox" name='addon' id='addon' />
 
                         <div className="content">

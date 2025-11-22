@@ -203,6 +203,11 @@ button.cta-btn {
     margin-bottom: 1em;
 }
 
+.active-addon {
+    border-color: var(--primary-clr-blue-950);
+    background-color: var(--neutral-clr-blue-100);
+}
+
 .content {
     margin-right: auto;
     padding-right: 5em;
