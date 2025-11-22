@@ -28,9 +28,9 @@ function SelectPlan() {
             </div>
 
             <div className="toggle" onClick={() => setPaymentCycle(prev => prev === 'yearly' ? 'monthly' : 'yearly')}>
-                <span className="active">Monthly</span>
+                <span className={paymentCycle === 'monthly' ? 'active' : ''}>Monthly</span>
                 <div className={`toggle-bar ${paymentCycle === 'yearly' ? 'toggled' : ''}`}></div>
-                <span>Yearly</span>
+                <span className={paymentCycle === 'yearly' ? 'active' : ''}>Yearly</span>
             </div>
 
             <div className="cta-btns">
