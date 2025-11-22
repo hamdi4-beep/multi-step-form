@@ -12,8 +12,8 @@ function AddOns() {
             const checkboxElement = addonElement.firstElementChild as HTMLInputElement
 
             if (addonElement.contains(targetElement)) {
-                addonElement.classList.add('active-addon')
-                checkboxElement.checked = true
+                addonElement.classList.toggle('active-addon')
+                checkboxElement.checked = !checkboxElement.checked
             }
         }
     }
