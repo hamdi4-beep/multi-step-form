@@ -1,8 +1,9 @@
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import data from '../data.json'
 
 function AddOns() {
     const navigate = useNavigate()
+    const {state} = useLocation()
 
     const handleAddonClick: React.MouseEventHandler = e => {
         const targetElement = e.target as HTMLElement
@@ -33,7 +34,7 @@ function AddOns() {
                             <p>{addon.description}</p>
                         </div>
 
-                        <span className="price">+${addon.price}/yr</span>
+                        <span className="price">+${(addon.price as {[x: string]: any})[state.paymentCycle]}/{state.paymentCycle === 'monthly' ? 'mo' : 'yr'}</span>
                     </div>
                 ))}
             </div>

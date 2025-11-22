@@ -49,7 +49,7 @@ function SelectPlan() {
                 <button onClick={() => navigate('/multi-step-form/your-info')}>Go Back</button>
 
                 <button className="cta-btn">
-                    <Link to='/multi-step-form/add-ons'>Next Step</Link>
+                    <Link to='/multi-step-form/add-ons' state={{paymentCycle}}>Next Step</Link>
                 </button>
             </div>
         </div>
