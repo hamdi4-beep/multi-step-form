@@ -2,6 +2,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router'
 import YourInfo from './components/YourInfo'
 import SelectPlan from './components/SelectPlan'
 import AddOns from './components/AddOns'
+import Summary from './components/Summary'
 
 const steps = {
   'your-info': {
@@ -49,6 +50,7 @@ function App() {
             <Route path='/multi-step-form/your-info' element={<YourInfo />} />
             <Route path='/multi-step-form/select-plan' element={<SelectPlan />} />
             <Route path='/multi-step-form/add-ons' element={<AddOns />} />
+            <Route path='/multi-step-form/summary' element={<Summary />} />
             <Route path='*' element={<Navigate to='/multi-step-form/your-info' replace />} />
           </Routes>
         </div>

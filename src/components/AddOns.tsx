@@ -41,7 +41,7 @@ function AddOns() {
 
             <div className="cta-btns">
                 <button onClick={() => navigate('/multi-step-form/select-plan')}>Go back</button>
-                <button className="cta-btn">Next Step</button>
+                <button className="cta-btn" onClick={() => navigate('/multi-step-form/summary')}>Next Step</button>
             </div>
         </div>
     )
