@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 import data from '../data.json'
 import { useState, type MouseEventHandler } from 'react'
 
@@ -47,10 +47,7 @@ function SelectPlan() {
 
             <div className="cta-btns">
                 <button onClick={() => navigate('/multi-step-form/your-info')}>Go Back</button>
-
-                <button className="cta-btn">
-                    <Link to='/multi-step-form/add-ons' state={{paymentCycle}}>Next Step</Link>
-                </button>
+                <button className="cta-btn" onClick={() => navigate('/multi-step-form/add-ons')}>Next Step</button>
             </div>
         </div>
     )

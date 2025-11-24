@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router"
+
 function Summary() {
+    const navigate = useNavigate()
+
     return (
         <div className="page four">
             <h1>Finishing up</h1>
@@ -23,6 +27,16 @@ function Summary() {
                     <p>Larger storage</p>
                     <p className="addon-price">+$20/yr</p>
                 </div>
+            </div>
+
+            <div className="bottom-banner">
+                <p className="total-label">Total (per year)</p>
+                <p className="total-price">$120/yr</p>
+            </div>
+
+            <div className="action-btns">
+                <button onClick={() => navigate('/multi-step-form/add-ons')}>Go back</button>
+                <button className="cta-btn">Confirm</button>
             </div>
         </div>
     )

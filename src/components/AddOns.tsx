@@ -34,14 +34,14 @@ function AddOns() {
                             <p>{addon.description}</p>
                         </div>
 
-                        <span className="price">+${(addon.price as {[x: string]: any})[state.paymentCycle]}/{state.paymentCycle === 'monthly' ? 'mo' : 'yr'}</span>
+                        <span className="price">+${(addon.price as {[x: string]: any})[state ? state.paymentCycle : 'monthly']}/{state?.paymentCycle === 'monthly' ? 'mo' : 'yr'}</span>
                     </div>
                 ))}
             </div>
 
-            <div className="cta-btns">
+            <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/select-plan')}>Go back</button>
-                <button className="cta-btn" onClick={() => navigate('/multi-step-form/summary')}>Next Step</button>
+                <button className="cta-btn" onClick={() => navigate('/multi-step-form/summary', { state })}>Next Step</button>
             </div>
         </div>
     )
