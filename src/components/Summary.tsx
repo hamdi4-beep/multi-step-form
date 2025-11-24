@@ -11,17 +11,17 @@ function Summary() {
                         <button className="change-plan-btn">Change</button>
                     </div>
 
-                    <p>$90/yr</p>
+                    <p className="plan-price">$90/yr</p>
                 </div>
 
                 <div className="addon-info">
                     <p>Online service</p>
-                    <p>+$10/yr</p>
+                    <p className="addon-price">+$10/yr</p>
                 </div>
 
                 <div className="addon-info">
                     <p>Larger storage</p>
-                    <p>+$20/yr</p>
+                    <p className="addon-price">+$20/yr</p>
                 </div>
             </div>
         </div>

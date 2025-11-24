@@ -235,6 +235,53 @@ button.cta-btn {
     margin-top: 3em;
 }
 
+.wrapper {
+    background-color: var(--neutral-clr-blue-100);
+    border-radius: 10px;
+    padding: 1.5em;
+}
+
+.plan-title {
+    color: var(--primary-clr-blue-950);
+    font-weight: 700;
+    font-size: large;
+}
+
+.top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--neutral-clr-purple-200);
+}
+
+.top-banner button {
+    color: var(--neutral-clr-grey-500);
+    font: inherit;
+    text-decoration: underline;
+    margin-top: .2em;
+}
+
+.plan-price {
+    color: var(--primary-clr-blue-950);
+    font-weight: 700;
+}
+
+.addon-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.addon-info p {
+    color: var(--neutral-clr-grey-500);
+}
+
+p.addon-price {
+    color: var(--primary-clr-blue-950);
+}
+
 @media only screen and (min-width: 768px) {
     body {
         display: grid;
