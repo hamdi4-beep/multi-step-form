@@ -4,6 +4,7 @@ import { useState, type MouseEventHandler } from 'react'
 
 function SelectPlan() {
     const [paymentCycle, setPaymentCycle] = useState<'monthly' | 'yearly'>('monthly')
+    const [selectedPlan, setSelectedPlan] = useState<undefined | string>()
     const navigate = useNavigate()
 
     const handlePlanClick: MouseEventHandler = e => {
@@ -12,6 +13,7 @@ function SelectPlan() {
         for (const child of e.currentTarget.children) {
             if (child === elem) {
                 elem.classList.add('active-plan')
+                setSelectedPlan(elem.dataset['planName'])
             } else {
                 child.classList.remove('active-plan')
             }
@@ -25,7 +27,7 @@ function SelectPlan() {
 
             <div className="plans-list" onClick={handlePlanClick}>
                 {data.plans.map((plan, i) => (
-                    <div className={`plan ${plan.name === 'Arcade' ? 'active-plan' : ''}`} key={i}>
+                    <div className='plan' data-plan-name={plan.name} key={i}>
                         <div className="avatar-img">
                             <img src={`/multi-step-form/images/icon-${plan.name.toLocaleLowerCase()}.svg`} alt="" />
                         </div>
@@ -47,7 +49,12 @@ function SelectPlan() {
 
             <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/your-info')}>Go Back</button>
-                <button className="cta-btn" onClick={() => navigate('/multi-step-form/add-ons')}>Next Step</button>
+                <button className="cta-btn" onClick={() => navigate('/multi-step-form/add-ons', {
+                    state: {
+                        paymentCycle,
+                        selectedPlan
+                    }
+                })}>Next Step</button>
             </div>
         </div>
     )

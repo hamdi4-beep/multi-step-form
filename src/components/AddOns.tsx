@@ -1,9 +1,11 @@
 import { useLocation, useNavigate } from 'react-router'
 import data from '../data.json'
+import { useState } from 'react'
 
 function AddOns() {
     const navigate = useNavigate()
     const {state} = useLocation()
+    const [selectedAddOns, setSelectedAddOns] = useState<string[]>([])
 
     const handleAddonClick: React.MouseEventHandler = e => {
         const targetElement = e.target as HTMLElement
@@ -15,9 +17,18 @@ function AddOns() {
             if (addonElement.contains(targetElement)) {
                 addonElement.classList.toggle('active-addon')
                 checkboxElement.checked = !checkboxElement.checked
+
+                checkboxElement.checked ?
+                    setSelectedAddOns(prev =>
+                        Array.from(new Set([...prev, (addonElement as HTMLElement).dataset['addonName']!]))
+                    ) : setSelectedAddOns(prev =>
+                        prev.filter(it => it !== (addonElement as HTMLElement).dataset['addonName'])
+                    )
             }
         }
     }
+
+    console.log(selectedAddOns)
 
     return (
         <div className="page three">
@@ -26,7 +37,7 @@ function AddOns() {
 
             <div className="addons-list" onClick={handleAddonClick}>
                 {data.addons.map((addon, i) => (
-                    <div className="addon" key={i}>
+                    <div className="addon" key={i} data-addon-name={addon.title}>
                         <input type="checkbox" name='addon' id='addon' />
 
                         <div className="content">
