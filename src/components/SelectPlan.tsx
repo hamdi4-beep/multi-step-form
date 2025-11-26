@@ -45,7 +45,7 @@ function SelectPlan() {
                 <span className={paymentCycle === 'yearly' ? 'active' : ''}>Yearly</span>
             </div>
 
-            <div className="cta-btns">
+            <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/your-info')}>Go Back</button>
                 <button className="cta-btn" onClick={() => navigate('/multi-step-form/add-ons')}>Next Step</button>
             </div>
