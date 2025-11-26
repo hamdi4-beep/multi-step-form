@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from "react-router"
 
+// fix the reduce logic not working properly for the total amount
+
 function Summary() {
     const navigate = useNavigate()
     const {state} = useLocation()
@@ -7,7 +9,14 @@ function Summary() {
     const paymentCycle = state.paymentCycle === 'monthly' ?
         'mo' : 'yr'
 
-    console.log()
+    console.log(
+        state.addons.reduce((prev: any, curr: any) => {
+            if (prev) {
+                console.log(prev.price[state.paymentCycle])
+                return prev.price[state.paymentCycle]
+            }
+        })
+    )
 
     return (
         <div className="page four">
@@ -33,8 +42,8 @@ function Summary() {
             </div>
 
             <div className="bottom-banner">
-                <p className="total-label">Total (per year)</p>
-                <p className="total-price">${state.selectedPlan.price[state.paymentCycle] + state.addons.reduce((prev: any, curr: any) => curr.price[state.paymentCycle] + prev.price[state.paymentCycle])}/{paymentCycle}</p>
+                <p className="total-label">Total (per {paymentCycle === 'mo' ? 'month' : 'year'})</p>
+                <p className="total-price">${0}/{paymentCycle}</p>
             </div>
 
             <div className="action-btns">
