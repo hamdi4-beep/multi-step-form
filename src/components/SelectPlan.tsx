@@ -52,7 +52,7 @@ function SelectPlan() {
                 <button className="cta-btn" onClick={() => navigate('/multi-step-form/add-ons', {
                     state: {
                         paymentCycle,
-                        selectedPlan
+                        selectedPlan: data.plans.find(it => it.name === selectedPlan)
                     }
                 })}>Next Step</button>
             </div>

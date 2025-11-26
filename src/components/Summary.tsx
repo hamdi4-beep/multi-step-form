@@ -1,7 +1,15 @@
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
+
+const paymentCycle = {
+    'monthly': 'mo',
+    'yearly': 'yr'
+} as Record<string, string>
 
 function Summary() {
     const navigate = useNavigate()
+    const {state} = useLocation()
+
+    console.log(state)
 
     return (
         <div className="page four">
@@ -11,22 +19,19 @@ function Summary() {
             <div className="wrapper">
                 <div className="top-banner">
                     <div className="plan-info">
-                        <p className="plan-title">Arcade (Yearly)</p>
+                        <p className="plan-title">{state.selectedPlan['name']} ({state.paymentCycle === 'monthly' ? 'Monthly' : 'Yearly'})</p>
                         <button className="change-plan-btn">Change</button>
                     </div>
 
-                    <p className="plan-price">$90/yr</p>
+                    <p className="plan-price">${state.selectedPlan.price[state.paymentCycle]}/{paymentCycle[state.paymentCycle]}</p>
                 </div>
 
-                <div className="addon-info">
-                    <p>Online service</p>
-                    <p className="addon-price">+$10/yr</p>
-                </div>
-
-                <div className="addon-info">
-                    <p>Larger storage</p>
-                    <p className="addon-price">+$20/yr</p>
-                </div>
+                {state.addons.map((addon: any, index: number) => (
+                    <div className="addon-info" key={index}>
+                        <p>{addon.title}</p>
+                        <p className="addon-price">+${addon.price[state.paymentCycle]}/{paymentCycle[state.paymentCycle]}</p>
+                    </div>
+                ))}
             </div>
 
             <div className="bottom-banner">
