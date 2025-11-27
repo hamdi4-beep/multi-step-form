@@ -28,6 +28,21 @@ function AddOns() {
         }
     }
 
+    const handleNextClick = () => {
+        if (!selectedAddOns.length) {
+            console.log('No addon was selected!')
+            return
+        }
+
+        navigate('/multi-step-form/summary',
+            {
+                state: Object.assign(state, {
+                    addons: selectedAddOns.map(it => data.addons.find(addon => addon.title === it))
+                })
+            }
+        )
+    }
+
     return (
         <div className="page three">
             <h1>Pick add-ons</h1>
@@ -50,7 +65,7 @@ function AddOns() {
 
             <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/select-plan')}>Go back</button>
-                <button className="cta-btn" onClick={() => navigate('/multi-step-form/summary', { state: Object.assign(state, {addons: selectedAddOns.map(it => data.addons.find(addon => addon.title === it))}) })}>Next Step</button>
+                <button className="cta-btn" onClick={handleNextClick}>Next Step</button>
             </div>
         </div>
     )
