@@ -21,7 +21,10 @@ const steps = {
     name: 'Summary',
     number: 4
   }
-} as Record<string, any>
+} as Record<string, {
+  name: string
+  number: number
+}>
 
 function App() {
   const location = useLocation()
