@@ -20,6 +20,20 @@ function SelectPlan() {
         }
     }
 
+    const handleNextClick = () => {
+        if (!selectedPlan) {
+            console.log('No plan was selected!')
+            return
+        }
+
+        navigate('/multi-step-form/add-ons', {
+            state: {
+                paymentCycle,
+                selectedPlan: data.plans.find(it => it.name === selectedPlan)
+            }
+        })
+    }
+
     return (
         <div className="page two">
             <h1>Select your plan</h1>
@@ -49,12 +63,7 @@ function SelectPlan() {
 
             <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/your-info')}>Go Back</button>
-                <button className="cta-btn" onClick={() => navigate('/multi-step-form/add-ons', {
-                    state: {
-                        paymentCycle,
-                        selectedPlan: data.plans.find(it => it.name === selectedPlan)
-                    }
-                })}>Next Step</button>
+                <button className="cta-btn" onClick={handleNextClick}>Next Step</button>
             </div>
         </div>
     )
