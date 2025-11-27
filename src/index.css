@@ -294,12 +294,9 @@ p.addon-price {
     font-weight: 700;
 }
 
-.page.four {
-    text-align: center;
-}
-
 .page.four .icon-img {
     margin-bottom: 1em;
+    text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
