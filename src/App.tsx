@@ -3,6 +3,7 @@ import YourInfo from './components/YourInfo'
 import SelectPlan from './components/SelectPlan'
 import AddOns from './components/AddOns'
 import Summary from './components/Summary'
+import Confirmation from './components/Confirmation'
 
 const steps = {
   'your-info': {
@@ -33,7 +34,7 @@ function App() {
         <div className="left-side">
           {Object.keys(steps).map((path, i) => (
             <div className="step" key={i}>
-              <span className={`step-number ${path === location.pathname.split('/').pop() ? 'active-step' : ''}`}>{steps[path].number}</span>
+              <span className={`step-number ${path === (location.pathname.split('/').pop() || 'confirmation') ? 'active-step' : ''}`}>{steps[path].number}</span>
               
               <div className="step-info">
                 <p>Step {steps[path].number}</p>
@@ -49,6 +50,7 @@ function App() {
             <Route path='/multi-step-form/select-plan' element={<SelectPlan />} />
             <Route path='/multi-step-form/add-ons' element={<AddOns />} />
             <Route path='/multi-step-form/summary' element={<Summary />} />
+            <Route path='/multi-step-form/confirmation' element={<Confirmation />} />
             <Route path='*' element={<Navigate to='/multi-step-form/your-info' replace />} />
           </Routes>
         </div>

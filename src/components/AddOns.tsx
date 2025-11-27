@@ -36,7 +36,7 @@ function AddOns() {
 
         navigate('/multi-step-form/summary',
             {
-                state: Object.assign(state, {
+                state: Object.assign(state || {}, {
                     addons: selectedAddOns.map(it => data.addons.find(addon => addon.title === it))
                 })
             }

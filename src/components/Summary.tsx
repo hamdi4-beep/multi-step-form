@@ -50,7 +50,7 @@ function Summary() {
 
             <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/add-ons')}>Go back</button>
-                <button className="cta-btn">Confirm</button>
+                <button className="cta-btn" onClick={() => navigate('/multi-step-form/confirmation')}>Confirm</button>
             </div>
         </div>
     )
