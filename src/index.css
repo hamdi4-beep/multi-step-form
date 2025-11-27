@@ -256,11 +256,12 @@ button.cta-btn {
     border-bottom: 1px solid var(--neutral-clr-purple-200);
 }
 
-.top-banner button {
+.change-plan-btn {
     color: var(--neutral-clr-grey-500);
     font: inherit;
     text-decoration: underline;
     margin-top: .2em;
+    cursor: pointer;
 }
 
 .plan-price {
