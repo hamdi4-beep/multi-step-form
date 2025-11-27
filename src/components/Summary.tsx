@@ -1,8 +1,11 @@
+import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
+import Confirmation from "./Confirmation"
 
 function Summary() {
     const navigate = useNavigate()
     const {state, pathname} = useLocation()
+    const [isConfirmed, setIsConfirmed] = useState(false)
 
     const paymentCycle = state.paymentCycle === 'monthly' ? 'mo' : 'yr'
     const selectedPlanPrice = state.selectedPlan.price[state.paymentCycle]
@@ -19,6 +22,8 @@ function Summary() {
             },
             replace: true
         })
+
+    if (isConfirmed) return <Confirmation />
 
     return (
         <div className="page four">
@@ -50,7 +55,7 @@ function Summary() {
 
             <div className="action-btns">
                 <button onClick={() => navigate('/multi-step-form/add-ons')}>Go back</button>
-                <button className="cta-btn" onClick={() => navigate('/multi-step-form/confirmation')}>Confirm</button>
+                <button className="cta-btn" onClick={() => setIsConfirmed(true)}>Confirm</button>
             </div>
         </div>
     )

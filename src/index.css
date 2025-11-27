@@ -294,8 +294,11 @@ p.addon-price {
     font-weight: 700;
 }
 
-.page.four .icon-img {
+.page.confirmation .icon-img {
     margin-bottom: 1em;
+}
+
+.page.confirmation {
     text-align: center;
 }
 

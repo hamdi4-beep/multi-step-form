@@ -1,6 +1,6 @@
 function Confirmation() {
     return (
-        <div className="page four">
+        <div className="page confirmation">
             <div className="icon-img">
                 <img src="/multi-step-form/images/icon-thank-you.svg" alt="" />
             </div>
