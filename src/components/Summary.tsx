@@ -2,9 +2,31 @@ import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 import Confirmation from "./Confirmation"
 
+type State = {
+    paymentCycle: 'monthly' | 'yearly'
+    selectedPlan: {
+        name: string
+        price: {
+            monthly: number
+            yearly: number
+        }
+    },
+    addons: {
+        title: string
+        description: string
+        price: {
+            monthly: number
+            yearly: number
+        }
+    }[]
+}
+
 function Summary() {
     const navigate = useNavigate()
-    const {state, pathname} = useLocation()
+    const {state, pathname}: {
+        state: State
+        pathname: string
+    } = useLocation()
     const [isConfirmed, setIsConfirmed] = useState(false)
 
     const paymentCycle = state.paymentCycle === 'monthly' ? 'mo' : 'yr'
