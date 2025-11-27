@@ -1,22 +1,24 @@
 import { useLocation, useNavigate } from "react-router"
 
-// fix the reduce logic not working properly for the total amount
-
 function Summary() {
     const navigate = useNavigate()
-    const {state} = useLocation()
+    const {state, pathname} = useLocation()
 
-    const paymentCycle = state.paymentCycle === 'monthly' ?
-        'mo' : 'yr'
+    const paymentCycle = state.paymentCycle === 'monthly' ? 'mo' : 'yr'
+    const selectedPlanPrice = state.selectedPlan.price[state.paymentCycle]
 
-    console.log(
-        state.addons.reduce((prev: any, curr: any) => {
-            if (prev) {
-                console.log(prev.price[state.paymentCycle])
-                return prev.price[state.paymentCycle]
-            }
+    const addonsTotalPrice = state.addons
+            .map((it: any) => it.price[state.paymentCycle])
+            .reduce((prev: any, curr: any) => prev + curr)
+
+    const handleChangeClick = () =>
+        navigate(pathname, {
+            state: {
+                ...state,
+                paymentCycle: state.paymentCycle === 'monthly' ? 'yearly' : 'monthly'
+            },
+            replace: true
         })
-    )
 
     return (
         <div className="page four">
@@ -27,10 +29,10 @@ function Summary() {
                 <div className="top-banner">
                     <div className="plan-info">
                         <p className="plan-title">{state.selectedPlan['name']} ({state.paymentCycle.replace(paymentCycle[0], paymentCycle[0].toUpperCase())})</p>
-                        <button className="change-plan-btn">Change</button>
+                        <button className="change-plan-btn" onClick={handleChangeClick}>Change</button>
                     </div>
 
-                    <p className="plan-price">${state.selectedPlan.price[state.paymentCycle]}/{paymentCycle}</p>
+                    <p className="plan-price">${selectedPlanPrice}/{paymentCycle}</p>
                 </div>
 
                 {state.addons.map((addon: any, index: number) => (
@@ -43,7 +45,7 @@ function Summary() {
 
             <div className="bottom-banner">
                 <p className="total-label">Total (per {paymentCycle === 'mo' ? 'month' : 'year'})</p>
-                <p className="total-price">${0}/{paymentCycle}</p>
+                <p className="total-price">${selectedPlanPrice + addonsTotalPrice}/{paymentCycle}</p>
             </div>
 
             <div className="action-btns">
