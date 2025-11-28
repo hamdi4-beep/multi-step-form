@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router"
+
 function YourInfo() {
+  const navigate = useNavigate()
+
   return (
     <div className="page">
       <h1>Personal Info</h1>
@@ -11,11 +15,11 @@ function YourInfo() {
         <input type="email" name="emailAddress" id="emailAddress" className="input-field" placeholder="e.g. stephenking@lorem.com" />
         <label htmlFor="phoneNumber">Phone Number</label>
         <input type="number" name="phoneNumber" id="phoneNumber" className="input-field" placeholder="e.g. +1 234 567 890" />
-        
-        <div className="action-btns">
-          <button className="cta-btn">Next Step</button>
-        </div>
       </form>
+
+      <div className="action-btns">
+        <button className="cta-btn" onClick={() => navigate('/multi-step-form/select-plan')}>Next Step</button>
+      </div>
     </div>
   )
 }

@@ -61,11 +61,6 @@ body {
     background-color: var(--neutral-clr-purple-200);
 }
 
-.container {
-    position: relative;
-    height: 100%;
-}
-
 .left-side {
     background-image: url(../public/images/bg-sidebar-mobile.svg);
     background-position: center;
@@ -307,6 +302,7 @@ p.addon-price {
 
 .page.confirmation {
     text-align: center;
+    justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -315,6 +311,12 @@ p.addon-price {
         min-height: 100vh;
         display: grid;
         align-items: center;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .left-side {
@@ -371,10 +373,12 @@ p.addon-price {
         max-width: 1024px;
         margin-inline: auto;
         width: 100%;
+        height: 90vh;
     }
 
     .action-btns {
         position: static;
+        margin-top: auto;
     }
 
     .plans-list {
