@@ -32,6 +32,8 @@ function Summary() {
         pathname: string
     } = useLocation()
     
+    console.log(state)
+
     const [isConfirmed, setIsConfirmed] = useState(false)
 
     const cycleVariations = state.paymentCycle === 'monthly' ? 'mo' : 'yr'
@@ -81,7 +83,7 @@ function Summary() {
             </div>
 
             <div className="action-btns">
-                <button onClick={() => navigate('/multi-step-form/add-ons')}>Go back</button>
+                <button onClick={() => navigate('/multi-step-form/add-ons', { state })}>Go back</button>
                 <button className="cta-btn" onClick={() => setIsConfirmed(true)}>Confirm</button>
             </div>
         </div>
