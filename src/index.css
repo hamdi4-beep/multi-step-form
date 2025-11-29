@@ -96,7 +96,6 @@ body {
     max-width: 25rem;
     margin-inline: auto;
     transform: translateY(-4em);
-    padding: 1em;
 }
 
 .page {
@@ -198,24 +197,23 @@ button.cta-btn {
 
 .addon {
     display: flex;
-    gap: 1em;
     align-items: center;
+    justify-content: space-between;
     border: 1px solid var(--neutral-clr-purple-200);
     border-radius: 10px;
-    padding: 1em;
-    padding-right: 2em;
     padding-block: 1.5em;
+    padding-right: 1em;
     margin-bottom: 1em;
+}
+
+.addon .content {
+    flex-shrink: 0;
+    flex-grow: 1;
 }
 
 .active-addon {
     border-color: var(--primary-clr-blue-950);
     background-color: var(--neutral-clr-blue-100);
-}
-
-.content {
-    margin-right: auto;
-    padding-right: 5em;
 }
 
 .title {
@@ -228,7 +226,7 @@ button.cta-btn {
 }
 
 .addon input {
-    margin-inline: 1em;
+    margin-inline: 1.5em;
     color: blue;
 }
 
@@ -321,6 +319,8 @@ p.addon-price {
         display: flex;
         flex-direction: column;
         height: 100%;
+        padding: 0;
+        padding-inline: 5em;
     }
 
     .left-side {
@@ -362,7 +362,8 @@ p.addon-price {
 
     .right-side {
         padding-top: 3em;
-        padding-inline: 3em;
+        margin: 0;
+        max-width: 100%;
         width: 100%;
         transform: none;
     }
@@ -383,6 +384,7 @@ p.addon-price {
     .action-btns {
         position: static;
         margin-top: auto;
+        margin-bottom: 1em;
     }
 
     .plans-list {
