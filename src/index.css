@@ -93,10 +93,14 @@ body {
 }
 
 .right-side {
-    background-color: var(--neutral-clr-white);
-    width: 25rem;
+    max-width: 25rem;
     margin-inline: auto;
     transform: translateY(-4em);
+    padding: 1em;
+}
+
+.page {
+    background-color: var(--neutral-clr-white);
     padding: 1.5rem;
     padding-top: 2rem;
     border-radius: 10px;
